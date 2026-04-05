@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ahmed Abdulrahman | Global Journey & Fitness Ethos</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 10% 30%, #eef2f5, #e0e8ef);
+            color: #1a2e2b;
+            line-height: 1.5;
+            padding: 2rem 1.2rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* main card */
+        .main-card {
+            background: #ffffff;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s;
+        }
+
+        /* vibrant header */
+        .hero-header {
+            background: linear-gradient(115deg, #0c2f28 0%, #1b5e4a 100%);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .avatar-icon {
+            width: 130px;
+            height: 130px;
+            background: radial-gradient(circle at 30% 25%, #ffdf8c, #f3b33d);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #2b4b3b;
+            border: 4px solid rgba(255, 245, 200, 0.8);
+            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+
+        .badge-location {
+            background: rgba(255, 240, 180, 0.2);
+            backdrop-filter: blur(4px);
+            display: inline-flex;
+            gap: 10px;
+            padding: 0.4rem 1.4rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #ffefc0;
+            margin-top: 8px;
+        }
+
+        /* content wrapper */
+        .content-expanded {
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: #fefefe;
+            border-radius: 1.6rem;
+            padding: 1.6rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9f0ec;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.1);
+            border-color: #cde2d8;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            border-left: 5px solid #e67e22;
+            padding-left: 1rem;
+            color: #1e463a;
+        }
+
+        .card-title i {
+            color: #e67e22;
+            font-size: 1.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 0.98rem;
+        }
+
+        .info-list li strong {
+            min-width: 115px;
+            font-weight: 700;
+            color: #1c5a48;
+        }
+
+        .timeline-item {
+            background: #f8fbf9;
+            border-radius: 1.2rem;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #e67e22;
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: #c55a1a;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .contact-block {
+            background: #f2f7f4;
+            border-radius: 1.2rem;
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: 0.2s;
+        }
+
+        .contact-block i {
+            width: 32px;
+            font-size: 1.3rem;
+            color: #2c7a5e;
+        }
+
+        .contact-block a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1f5e4b;
+        }
+
+        .contact-block a:hover {
+            text-decoration: underline;
+            color: #e67e22;
+        }
+
+        .fitness-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .fitness-badge {
+            background: white;
+            border-radius: 2rem;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            font-weight: 500;
+            border: 1px solid #e2eadf;
+        }
+
+        .quote-area {
+            margin-top: 1.5rem;
+            background: #fff6ea;
+            padding: 1rem 1.3rem;
+            border-radius: 1.4rem;
+            font-style: italic;
+            font-weight: 500;
+            color: #b4561c;
+        }
+
+        /* random facts / dynamic zone */
+        .dynamic-zone {
+            grid-column: span 2;
+            background: linear-gradient(115deg, #fcf8e8, #fff7e6);
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+            border: 1px solid #ffe0a3;
+        }
+
+        .fact-text {
+            font-size: 1rem;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .fact-btn {
+            background: #2c7a5e;
+            border: none;
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 2.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .fact-btn:hover {
+            background: #1e5e48;
+            transform: scale(0.97);
+        }
+
+        /* extra journey map style */
+        .journey-highlight {
+            background: #eef3f0;
+            border-radius: 1rem;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-bottom: 1rem;
+            font-size: 0.8rem;
+            color: #4b6b5e;
+            border-top: 1px solid #dce9e2;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 880px) {
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .dynamic-zone {
+                grid-column: span 1;
+            }
+            .content-expanded {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-card">
+        <div class="hero-header">
+            <div class="avatar-icon">
+                <span>🏋️‍♂️🌍</span>
+            </div>
+            <h1>Ahmed Abdulrahman</h1>
+            <div class="badge-location">
+                <i class="fas fa-map-pin"></i> KSA → Ethiopia | <i class="fas fa-dumbbell"></i> Fitness Architect | Grade 11
+            </div>
+        </div>
+
+        <div class="content-expanded">
+            <div class="two-columns">
+                <!-- LEFT COLUMN: personal foundation + journey with burka bori & bori details -->
+                <div class="info-card">
+                    <div class="card-title">
+                        <i class="fas fa-route"></i> My Cross‑cultural Journey
+                    </div>
+                    <ul class="info-list">
+                        <li><strong>🇸🇦 Born in KSA:</strong> <span>First 10 years of schooling & early life</span></li>
+                        <li><strong>✈️ Move to Ethiopia:</strong> <span>Continued education from 5th grade onward</span></li>
+                        <li><strong>📍 Grades 7–8:</strong> <span><i class="fas fa-school"></i> Burka Bori — foundational years, built resilience & adapted to new environment</span></li>
+                        <li><strong>📍 Grades 9–11:</strong> <span><i class="fas fa-graduation-cap"></i> Bori — currently thriving as Grade 11 student, embracing academics & fitness</span></li>
+                        <li><strong>👨‍👩‍👧‍👦 Family:</strong> <span>Parents, two siblings (5 members total). Support system that keeps me motivated.</span></li>
+                        <li><strong>🎂 Age:</strong> <span>18 years old — determined & disciplined.</span></li>
+                    </ul>
+                    <div class="journey-highlight">
+                        <i class="fas fa-chalkboard-user"></i> <strong>Education timeline recap:</strong> 10 years in Saudi → 5th grade onward Ethiopia → Grade 7-8 (Burka Bori) → Grade 9-11 (Bori). Currently grade 11 in Bori, focused on excellence.
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: fitness passion + contact -->
+                <div class="info-card">
+                    <div class="card-title">
+                        <i class="fas fa-heartbeat"></i> Fitness Ethos & Contact
+                    </div>
+                    <p style="margin-bottom: 12px;">🏆 <strong>Physical exercise is my anchor</strong> — it fuels my mind for studies and keeps me energized.</p>
+                    <div class="fitness-grid">
+                        <span class="fitness-badge"><i class="fas fa-running"></i> 5x/week strength</span>
+                        <span class="fitness-badge"><i class="fas fa-swimmer"></i> Calisthenics focus</span>
+                        <span class="fitness-badge"><i class="fas fa-apple-alt"></i> Clean nutrition</span>
+                        <span class="fitness-badge"><i class="fas fa-brain"></i> Mind-muscle connection</span>
+                    </div>
+                    <div class="quote-area">
+                        <i class="fas fa-quote-left"></i> “Whether in Burka Bori or Bori, I carry my workout mat and my discipline. Physical strength mirrors mental strength.”
+                    </div>
+                    <div style="margin-top: 1.2rem;">
+                        <div class="contact-block">
+                            <i class="fas fa-phone-alt"></i>
+                            <div><strong>Phone:</strong> <a href="tel:+251912234567">0912234567</a> (Ethiopia)</div>
+                        </div>
+                        <div class="contact-block">
+                            <i class="fas fa-envelope"></i>
+                            <div><strong>Email:</strong> <a href="mailto:ahmedabdurahman14@gmail.com">ahmedabdurahman14@gmail.com</a></div>
+                        </div>
+                        <div class="contact-block">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div><strong>Current city:</strong> Bori, Ethiopia (studying & training)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- additional detailed section: burka bori & bori experience (extra depth) -->
+                <div class="info-card">
+                    <div class="card-title">
+                        <i class="fas fa-landmark"></i> Deep Roots: Burka Bori → Bori
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year"><i class="far fa-calendar-alt"></i> Grades 7–8 | Burka Bori</div>
+                        <p>Life in Burka Bori shaped my adaptability. I discovered the value of consistency — both in class and in daily physical routines. The community there taught me perseverance, and I started taking fitness seriously as a way to channel energy positively.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year"><i class="far fa-calendar-alt"></i> Grades 9–11 | Bori (Current)</div>
+                        <p>Now in Bori, I'm completing my grade 11 with enthusiasm. The environment here fuels my passion for learning and pushing physical limits. I balance textbooks with pull-ups, and my goal is to inspire others in Bori to embrace active lifestyles. I've become known among friends for leading small workout groups after school.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year"><i class="fas fa-globe"></i> Cultural fusion</div>
+                        <p>Growing up between Saudi Arabia and Ethiopia, plus moving through Burka Bori to Bori, gave me a unique worldview. I speak Arabic and English fluently, and I'm learning local phrases to connect deeper. Each place added a layer to my identity.</p>
+                    </div>
+                </div>
+
+                <!-- extra: goals & random specifics (more content) -->
+                <div class="info-card">
+                    <div class="card-title">
+                        <i class="fas fa-bullseye"></i> Milestones & Lifestyle
+                    </div>
+                    <ul class="info-list">
+                        <li><strong>🏅 Fitness goal 2026:</strong> <span>Master muscle-ups & achieve 12 clean pull-ups. Increase deadlift to 120kg.</span></li>
+                        <li><strong>📚 Academic aim:</strong> <span>Excel in Grade 11 science stream, merge discipline from fitness into study routine.</span></li>
+                        <li><strong>🧘 Daily ritual:</strong> <span>5:30 AM wake-up, 20 min mobility, school from 8 AM, afternoon workout, evening revision.</span></li>
+                        <li><strong>🌟 Role models:</strong> <span>David Goggins (resilience), Kipchoge (endurance), and local Ethiopian runners who inspire consistency.</span></li>
+                        <li><strong>💡 Fun fact:</strong> <span>I ran my first 5km in Burka Bori during a school charity event — finished in 26 minutes!</span></li>
+                        <li><strong>🍽️ Fuel:</strong> <span>Ethiopian injera + lean proteins & lots of water — balance of tradition and fitness.</span></li>
+                    </ul>
+                    <div class="quote-area" style="background:#eef2ea; margin-top: 1rem;">
+                        <i class="fas fa-hand-fist"></i> “From the streets of Burka Bori to classrooms in Bori, I've learned that effort transcends location. My journey is just beginning.”
+                    </div>
+                </div>
+
+                <!-- DYNAMIC RANDOM FACTS SECTION (extra fun, never short) -->
+                <div class="dynamic-zone" id="dynamicFactZone">
+                    <div class="fact-text">
+                        <i class="fas fa-dice-d6" style="margin-right: 10px; color:#e67e22;"></i>
+                        <span id="randomFactMessage">💥 Did you know? Burka Bori's local running trails helped Ahmed increase stamina by 30%!</span>
+                    </div>
+                    <button class="fact-btn" id="randomizeFactBtn"><i class="fas fa-sync-alt"></i> New Insight</button>
+                </div>
+
+                <!-- extra quote & motivation row - make it richer -->
+                <div style="grid-column: span 2; background: #e9f1ec; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-top: 0.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;">
+                    <div><i class="fas fa-quote-right" style="font-size: 1.8rem; opacity: 0.5;"></i> <strong>Mantra:</strong> "Strength doesn't come from what you can do. It comes from overcoming what you once thought you couldn't."</div>
+                    <div><i class="fas fa-calendar-week"></i> Current training split: Push/Pull/Legs + cardio & core</div>
+                </div>
+            </div>
+            <footer>
+                <i class="fas fa-dumbbell"></i> Ahmed Abdulrahman — Born in KSA, raised between cultures, sharpened in Burka Bori & Bori. Grade 11 | 18 yrs | Fitness advocate <i class="fas fa-heart" style="color:#e67e22;"></i>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Enriched random fact database that combines personal journey (Burka Bori, Bori, fitness, etc)
+    const richFacts = [
+        "🏃‍♂️ While living in Burka Bori (grades 7-8), Ahmed discovered his love for bodyweight exercises — he used local parks as his gym.",
+        "📚 In Bori, Ahmed leads a small 'fitness & focus' group among classmates every Thursday after school.",
+        "💪 From grade 9 to 11 in Bori, Ahmed increased his pull-up max from 3 to 12 reps through consistent training.",
+        "🌍 Moving from Saudi to Ethiopia, then transitioning through Burka Bori to Bori, made Ahmed fluent in adapting to new academic systems.",
+        "🥇 Ahmed's personal record: 2km run in 7 minutes 20 seconds, set on the fields near Bori school.",
+        "🎯 Burka Bori years taught Ahmed that discipline in small things (like daily stretching) leads to big wins.",
+        "🏋️ Ahmed's favorite workout: 'Burka Bori special' — 100 squats, 50 push-ups, 20 pull-ups, 1-mile run.",
+        "🧠 He often revises biology concepts while doing planks — active recall + active body!",
+        "📞 Ahmed's number 0912234567 is also his emergency contact for local workout meetups in Bori.",
+        "⭐ Fun addition: Ahmed can cook a mean post-workout meal — scrambled eggs with Ethiopian spices!",
+        "🎒 Grade 11 in Bori: Ahmed balances chemistry, physics and fitness with a smile.",
+        "🔥 When Ahmed lived in Burka Bori, he used to train early mornings before class — now a permanent habit.",
+        "🚀 One of Ahmed's dreams: open a community fitness hub in Bori to inspire youth in physical exercise.",
+        "🏅 'The hill sprints in Burka Bori were brutal but built my engine' — Ahmed.",
+        "💧 Hydration reminder: Ahmed drinks at least 3 liters daily, especially during Ethiopian sunny afternoons.",
+        "📧 He answers every email within 24h: ahmedabdurahman14@gmail.com — feel free to reach for fitness chat!"
+    ];
+    
+    const randomSpan = document.getElementById('randomFactMessage');
+    const randomBtn = document.getElementById('randomizeFactBtn');
+    
+    function setNewRandomFact() {
+        const randomIndex = Math.floor(Math.random() * richFacts.length);
+        const newFact = richFacts[randomIndex];
+        randomSpan.innerHTML = newFact;
+        // Add subtle animation
+        const zone = document.getElementById('dynamicFactZone');
+        zone.style.transition = "background 0.2s";
+        zone.style.backgroundColor = "#fff9e8";
+        setTimeout(() => {
+            zone.style.backgroundColor = "#fcf8e8";
+        }, 180);
+    }
+    
+    // initial random fact (different on each load)
+    setNewRandomFact();
+    
+    // event listener
+    randomBtn.addEventListener('click', setNewRandomFact);
+    
+    // additional small interactive hover effects on contact blocks and cards
+    const contactBlocks = document.querySelectorAll('.contact-block');
+    contactBlocks.forEach(block => {
+        block.addEventListener('mouseenter', () => {
+            block.style.backgroundColor = "#e8f1ec";
+            block.style.transform = "translateX(6px)";
+            block.style.transition = "0.2s";
+        });
+        block.addEventListener('mouseleave', () => {
+            block.style.backgroundColor = "#f2f7f4";
+            block.style.transform = "translateX(0)";
+        });
+    });
+    
+    // add dynamic greeting based on time (subtle personalization)
+    const heroBadge = document.querySelector('.badge-location');
+    const currentHour = new Date().getHours();
+    let timeMessage = "";
+    if (currentHour < 12) timeMessage = "🌅 Morning training spirit active!";
+    else if (currentHour < 17) timeMessage = "☀️ Afternoon grind — study & strength";
+    else timeMessage = "🌙 Evening reflection & recovery";
+    if (heroBadge && !heroBadge.innerHTML.includes(timeMessage.split(" ")[0])) {
+        const originalText = heroBadge.innerHTML;
+        heroBadge.setAttribute('title', timeMessage);
+        // optionally add small tooltip effect
+        heroBadge.style.cursor = "help";
+    }
+    
+    // Console message showing that Ahmed's full journey is loaded
+    console.log("✅ Enhanced profile loaded: Burka Bori (grades 7-8) → Bori (grades 9-11) | Ahmed Abdulrahman | Fitness lifestyle integrated");
+</script>
+</body>
+</html>
